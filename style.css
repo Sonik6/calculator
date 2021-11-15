@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Yuji Mai', serif;
+    font-size: 24px;
+}
+
+body{
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    max-width: 360px;
+    max-height: 720px;
+    background-color: #c29e3a !important;
+}
+
+.btn {
+    padding: 5px;
+}
+.equation{
+    grid-area: eq;
+    height: 100px;
+    background-color: black;
+    color: white;
+    padding: 2px;
+}
+.calculations {
+    padding: 15px;
+    display: grid;
+    gap: 10px;
+    grid-template-areas:
+                        "eq eq eq eq"
+                        "c del div mul"
+                        "7 8 9 min"
+                        "4 5 6 add"
+                        "1 2 4 equ"
+}
+.clear {
+    grid-area: c;
+}
+.delete {
+    grid-area: del;
+}
+.divide {
+    grid-area: div;
+}
+.multiply {
+    grid-area: mul;
+}
+.seven {
+    grid-area: 7;
+}
