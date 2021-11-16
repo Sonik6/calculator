@@ -1,15 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Yuji Mai', serif;
-    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
 }
 
-body{
-    
+.container  {
+    background-color: #c29e3a;
+    opacity: 0.8;
+    background-image:linear-gradient(#494949     1px, transparent 1px), linear-gradient(90deg, #494949 1px, #c29e3a 1px);
+    background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -19,42 +23,72 @@ body{
 .calculator {
     max-width: 360px;
     max-height: 720px;
-    background-color: #c29e3a !important;
+    background-color: #695c38 !important;
+    border-radius: 12px;
+    border: 3px solid black;
 }
 
 .btn {
+    background-color: #181818;
     padding: 5px;
-}
-.equation{
-    grid-area: eq;
-    height: 100px;
-    background-color: black;
+    border: 3px solid black;
     color: white;
-    padding: 2px;
+}
+
+.btn:hover{
+    background-color: #535353;
+}
+
+
+.equation{
+    height: 100px;
+    background-color: #4a863b;
+    color: white;
+    padding: 10px;
+    grid-column: 1 / -1;
+    border: 3px solid black;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.equation .previous{
+    color: rgba(255, 255, 255, .60);
+    font-size: 1.5rem;
+}
+
+.equation .current{
+    color: white;
+    font-size: 2rem;
 }
 .calculations {
-    padding: 15px;
+    padding: 20px;
     display: grid;
     gap: 10px;
-    grid-template-areas:
-                        "eq eq eq eq"
-                        "c del div mul"
-                        "7 8 9 min"
-                        "4 5 6 add"
-                        "1 2 4 equ"
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.clear {
-    grid-area: c;
+
+.zero {
+    grid-column-start: 2;
 }
-.delete {
-    grid-area: del;
+
+.equal {
+    grid-column: 4 / 5;
+    grid-row: 5 / 7;
 }
-.divide {
-    grid-area: div;
+
+.odin {
+    width: 35px;
+    height: auto;
 }
-.multiply {
-    grid-area: mul;
+
+.img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.seven {
-    grid-area: 7;
-}
+
+
