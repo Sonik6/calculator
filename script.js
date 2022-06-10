@@ -39,7 +39,12 @@ equalButton.addEventListener('click', () => {
         result = parseInt(previous) - parseInt(current);
     } else if (operation === '*') {
         result = parseInt(previous) * parseInt(current);
+    } else if (operation === '/') {
+        result = parseInt(previous) / parseInt(current);
+    } else {
+        result = 'Invalid Operation';
     }
+
     currentEl.innerHTML = result;
    
 });
