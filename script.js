@@ -5,7 +5,7 @@ const equalButton = document.querySelector('.eq');
 const deleteButton = document.querySelector('.del'); 
 const clearButton = document.querySelector('.cl'); 
 const previousEl = document.querySelector('.prev'); 
-const currentEl = document.querySelector('.curr'); 
+const currentEl = document.querySelector('.curr');
 
 
 let previous = '';
@@ -16,6 +16,7 @@ let operation = '';
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
         current += button.innerHTML;
+        current = current.substring(0, 10);
         currentEl.innerHTML = current;
     });
 });
@@ -35,12 +36,16 @@ equalButton.addEventListener('click', () => {
     let result = '';
     if (operation === '+') {
         result = parseInt(previous) + parseInt(current);
+        result = result.toString().substring(0, 10);
     } else if (operation === '-') {
         result = parseInt(previous) - parseInt(current);
+        result = result.toString().substring(0, 10);
     } else if (operation === '*') {
         result = parseInt(previous) * parseInt(current);
+        result = result.toString().substring(0, 10);
     } else if (operation === '/') {
         result = parseInt(previous) / parseInt(current);
+        result = result.toString().substring(0, 10);
     } else {
         result = 'Invalid Operation';
     }
