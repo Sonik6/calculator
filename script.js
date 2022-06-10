@@ -38,16 +38,16 @@ operationButtons.forEach(button => {
 equalButton.addEventListener('click', () => {
     let result = '';
     if (operation === '+') {
-        result = parseInt(previous) + parseInt(current);
+        result = parseFloat(previous) + parseFloat(current);
         result = result.toString().substring(0, 10);
     } else if (operation === '-') {
-        result = parseInt(previous) - parseInt(current);
+        result = parseFloat(previous) - parseFloat(current);
         result = result.toString().substring(0, 10);
     } else if (operation === '*') {
-        result = parseInt(previous) * parseInt(current);
+        result = parseFloat(previous) * parseFloat(current);
         result = result.toString().substring(0, 10);
     } else if (operation === '/') {
-        result = parseInt(previous) / parseInt(current);
+        result = parseFloat(previous) / parseFloat(current);
         result = result.toString().substring(0, 10);
     } else {
         result = 'Invalid Operation';
