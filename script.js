@@ -1,7 +1,3 @@
-class Calculator {
-    constructor(previous)
-}
-
 
 const numberButtons = document.querySelectorAll('.num');
 const operationButtons = document.querySelectorAll('.op');
@@ -10,3 +6,55 @@ const deleteButton = document.querySelector('.del');
 const clearButton = document.querySelector('.cl'); 
 const previousEl = document.querySelector('.prev'); 
 const currentEl = document.querySelector('.curr'); 
+
+
+let previous = '';
+let current = '';
+let operation = '';
+
+
+numberButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        current += button.innerHTML;
+        currentEl.innerHTML = current;
+    });
+});
+
+
+operationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        operation = button.innerHTML;
+        previous = current;
+        current = '';
+        previousEl.innerHTML = previous;
+    });
+});
+
+
+equalButton.addEventListener('click', () => {
+    let result = '';
+    if (operation === '+') {
+        result = parseInt(previous) + parseInt(current);
+    } else if (operation === '-') {
+        result = parseInt(previous) - parseInt(current);
+    } else if (operation === '*') {
+        result = parseInt(previous) * parseInt(current);
+    }
+    currentEl.innerHTML = result;
+   
+});
+
+
+clearButton.addEventListener('click', () => {
+    previous = '';
+    current = '';
+    operation = '';
+    previousEl.innerHTML = previous;
+    currentEl.innerHTML = current;
+});
+
+
+deleteButton.addEventListener('click', () => {
+    current = current.slice(0, -1);
+    currentEl.innerHTML = current;
+}, false);
