@@ -15,6 +15,9 @@ let operation = '';
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
+        if (current === '.') {
+            current = '0.';
+        }
         current += button.innerHTML;
         current = current.substring(0, 10);
         currentEl.innerHTML = current;
